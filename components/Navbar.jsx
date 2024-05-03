@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AuthButton from "./auth/AuthButton";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
 
         <ul className="flex gap-4 text-[#9C9C9C]">
           <li>
-            <Link href="/login">Login</Link>
+            <AuthButton />
           </li>
           <li>About</li>
           <li>Contact Us</li>
