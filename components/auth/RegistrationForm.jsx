@@ -1,29 +1,30 @@
-import React from "react";
+import { registerUser } from "@/app/actions";
 
 const RegistrationForm = () => {
   return (
-    <form className="login-form">
+    <form className="login-form" action={registerUser}>
       <div>
-        <label for="name">Full Name</label>
+        <label htmlFor="name">Full Name</label>
         <input type="text" name="name" id="name" />
       </div>
 
       <div>
-        <label for="email">Email Address</label>
+        <label htmlFor="email">Email Address</label>
         <input type="email" name="email" id="email" />
       </div>
 
       <div>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password" />
-      </div>
-      <div>
-        <label for="phone">Phone Number</label>
-        <input type="tel" name="pnone" id="phone" />
       </div>
 
       <div>
-        <label for="bio">Bio</label>
+        <label htmlFor="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" />
+      </div>
+
+      <div>
+        <label htmlFor="bio">Bio</label>
         <input className="min-h-16" type="text" name="bio" id="bio" />
       </div>
 
