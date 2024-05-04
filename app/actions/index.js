@@ -1,6 +1,12 @@
 "use server";
 
-const { createUser, findUserByCredentials } = require("@/db/queries");
+import { revalidatePath } from "next/cache";
+
+const {
+  createUser,
+  findUserByCredentials,
+  updateInterest,
+} = require("@/db/queries");
 const { redirect } = require("next/navigation");
 
 async function registerUser(formData) {
@@ -22,4 +28,13 @@ async function performLogin(formData) {
   }
 }
 
-export { registerUser, performLogin };
+async function addInterestedEvent(eventId, authId) {
+  try {
+    await updateInterest(eventId, authId);
+    revalidatePath("/"); //cleared chache and new data are loaded in UI from backend
+  } catch (err) {
+    throw err;
+  }
+}
+
+export { registerUser, performLogin, addInterestedEvent };
