@@ -3,8 +3,8 @@ import Search from "./Search";
 
 const Header = () => {
   return (
-    <div className="flex justify-between">
-      <h1 className="font-bold text-3xl">Discover Events</h1>
+    <div className="md:pt-6 flex justify-between">
+      <h1 className="font-semibold md:font-bold text-lg md:text-2xl">Discover Events</h1>
       <Search />
     </div>
   );
